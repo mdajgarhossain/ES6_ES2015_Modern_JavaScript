@@ -29,6 +29,7 @@ const teacher = {
 
 //:::::::::::::::::::::::::::Template Literals:::::::::::::::::::::
 
+
 let message = `${student.name} please see ${teacher.name} in ${teacher.room} to pick up your report card.`;
 
 console.log(message);
@@ -45,3 +46,18 @@ Thank you,
 ${student.guardian}`;
 
 console.log(note);
+
+
+//::another example:::
+function myFunction(name, profession) {
+    console.log(`My name is ${name} and I am a ${profession}.`); 
+}
+
+myFunction('Ajgar', 'Software Developer');
+
+//::another example:::
+function addThenPrint(a, b) {
+    console.log(`a + b = ${a + b}`);
+}
+addThenPrint(1, 2);
+
