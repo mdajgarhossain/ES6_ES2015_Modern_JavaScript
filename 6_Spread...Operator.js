@@ -74,3 +74,50 @@ const combined = [...number, ...names, ...profession];
 
 console.log(combined);
 
+//:::::::Spread... operator's all use cases in action::::::::::::::::::::
+
+/*add the elements of an existing array into a new array */
+const certsToAdd = ['Object-Oriented JavaScript', 'EcmaScript-6', 'React'];
+
+const newArray = ['JavaScript Fundamentals', ...certsToAdd, 'Redux', 'MySQL', 'MongoDB', 'nodeJS'];
+
+console.log(newArray);
+
+
+/*pass elements of an array as arguments to a function */
+function addThreeNumbers(x, y, z) {
+    console.log(x + y + z);
+}
+const myArray = [1, 2, 3];
+addThreeNumbers(...myArray);
+
+
+/*copy array */
+const developers = ['Mohammad','Ajgar', 'Hossain'];
+const newDevelopers = [...developers];  // like developers.slice()
+const newDevelopers2 = developers.slice();
+
+console.log(newDevelopers);
+console.log(newDevelopers2);
+
+
+newDevelopers.push('Jewel');
+console.log(newDevelopers);
+
+newDevelopers.pop();
+console.log(newDevelopers);
+
+
+/*Concatenate arrays */
+const arr1 = [0, 1, 2];
+const arr2 = [3, 4, 5];
+
+// const concatenated = arr1.concat(arr2); //concat() method
+// console.log(concatenated);
+
+const concatenated = [...arr1, ...arr2]; //Spread operator
+console.log(concatenated);
+
+const addMoreItems = [...arr1, 'New Items', ...arr2]
+console.log(addMoreItems);
+
