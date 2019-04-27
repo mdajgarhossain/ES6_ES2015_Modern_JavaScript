@@ -132,3 +132,15 @@ console.log(average(2, 3, 3, 5, 7, 10));
 console.log(average(7, 1432, 12, 13, 100));
 console.log(average());
 
+//:::another example:::
+function multiply(multiplier, ...theArgs) {
+  return theArgs.map(function(element) {
+    let result = multiplier * element;
+    return result;
+  });
+}
+const mapedArray = multiply(2, 1, 2, 3);
+console.log(mapedArray);
+
+const mapedArray2 = multiply(3);
+console.log(mapedArray2);
