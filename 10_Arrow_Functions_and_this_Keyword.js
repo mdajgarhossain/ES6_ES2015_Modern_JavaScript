@@ -169,3 +169,77 @@ value from their surrounding context. Outside of the addScoop() method, the valu
 'this' inside addScoop() is the global object. Which then makes the value of 'this' in
 the function passed to setTimeout() also set to the global object! */
 
+
+//:::Another Examples:::
+
+// const obj = {
+//     name: 'Jewel',
+//     age: 25,
+//     introduce: function() {
+//         console.log(`I am ${this.name}.`);
+//         return function() {
+//             console.log(`And I am ${this.age} years old.`);
+//         }
+//     }
+// };
+
+// console.log(obj);
+
+// const print = obj.introduce();
+// print();
+// obj.introduce()();
+
+
+/*So, now we are gonna use CLOUSER */
+// const obj = {
+//     name: 'Jewel',
+//     age: 25,
+//     introduce: function() {
+//         const value = this;
+//         console.log(`I am ${this.name}.`);
+//         return function() {
+//             console.log(`And I am ${value.age} years old.`);
+//         }
+//     }
+// };
+
+// console.log(obj);
+
+// const print = obj.introduce();
+// print();
+
+/*Same thing we can do with Arrow Function */
+// const obj = {
+//     name: 'Jewel',
+//     age: 25,
+//     introduce: function() {
+//         console.log(`I am ${this.name}.`);
+//         return () => {
+//             console.log(`And I am ${this.age} years old.`);
+//         }
+//     }
+// };
+
+// console.log(obj);
+
+// const print = obj.introduce();
+// print();
+
+
+/*Now we are gonna change the introduce() method to Arrow Function */
+const obj = {
+    name: 'Jewel',
+    age: 25,
+    introduce: () => {
+        console.log(`I am ${this.name}.`);
+        return () => {
+            console.log(`And I am ${this.age} years old.`);
+        }
+    }
+};
+
+console.log(obj);
+
+const print = obj.introduce();
+print();
+
