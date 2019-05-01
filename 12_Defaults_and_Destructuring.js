@@ -94,3 +94,67 @@ console.log(add([]));
 //     return `${num1} + ${num2} + ${num3} = ${output}`;
 // }
 // console.log(add([1, 2, [3, 4]]));
+
+
+//::::::::::::::::::::::Defaults and destructuring objects::::::::::::::::::::
+
+/*First we can see regular object destructuring */
+// const obj1 = {
+//     name: 'Jewel',
+//     age: 25
+// };
+// console.log(obj1);
+// console.log(obj1.name);
+// console.log(obj1.age);
+
+// const {name, age} = obj1;
+// console.log(name);
+// console.log(age);
+
+// const{age} = obj1;
+// console.log(age);
+
+/*Now Defaults with Destructuring Objects*/
+// function createSundae({scoops = 1, toppings = ['Hot Fudge']}) {
+//     const scoopText = scoops === 1 ? 'scoop' : 'scoops';
+//     return `Your sundae has ${scoops} ${scoopText} with ${toppings.join(' and ')} toppings.`;
+// }
+// console.log(createSundae({}));
+// console.log(createSundae({scoops: 2}));
+// console.log(createSundae({scoops: 2, toppings: ['Sprinkles']}));
+// console.log(createSundae({scoops: 3, toppings: []}));
+// console.log(createSundae({toppings: ['Cookie Dough']}));
+
+// console.log(createSundae()); // throws an error
+
+/*We can prevent this issue by providing a default object to the function: */
+// function createSundae({scoops = 1, toppings = ['Hot Fudge']} = {}) {
+//     const scoopText = scoops === 1 ? 'scoop' : 'scoops';
+//     return `Your sundae has ${scoops} ${scoopText} with ${toppings.join(' and ')} toppings.`;
+// }
+// console.log(createSundae());
+// console.log(createSundae({toppings: ['Sprinkles', 'Cookie Dough']}));
+
+
+//:::another example:::
+function houseDescriptor({houseColor = 'green', shutterColors = ['red']} = {}) {
+    return `I have a ${houseColor} house with ${shutterColors.join(' and ')} shutters`;
+}
+console.log(houseDescriptor({houseColor: 'red', shutterColors: ['white', 'gray', 'blue']}));
+console.log(houseDescriptor({houseColor: 'red'}));
+console.log(houseDescriptor({shutterColors: ['green', 'blue']}));
+console.log(houseDescriptor({}));
+console.log(houseDescriptor());
+
+
+//:::another example:::
+function myFunction({name = 'Student', profession = ['Software Developer']} = {}) {
+    return `My name is ${name} and I am a ${profession.join(' and ')}.`;
+}
+console.log(myFunction());
+console.log(myFunction({}));
+console.log(myFunction({name: 'Ajgar', profession: ['JavaScript Programmer']}));
+console.log(myFunction({name: 'Jewel'}));
+console.log(myFunction({profession: ['Coder']}));
+console.log(myFunction({name: 'Ajgar', profession: ['JavaScript Developer', 'Engineer']}));
+
