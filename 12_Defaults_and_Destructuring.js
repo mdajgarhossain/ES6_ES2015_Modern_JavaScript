@@ -84,3 +84,13 @@ console.log(add([, , [3]]));
 console.log(add([]));
 
 
+//Pending problem
+// function add([num1 = 5, num2 = 5, num3 = [7]]) {
+//     result = num1 + num2;
+//     for(const element of num3) {
+//         output = result + element;
+//         // return `${num1} + ${num2} + ${num3} = ${output}`;
+//     }
+//     return `${num1} + ${num2} + ${num3} = ${output}`;
+// }
+// console.log(add([1, 2, [3, 4]]));
