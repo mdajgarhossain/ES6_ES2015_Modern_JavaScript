@@ -82,3 +82,39 @@ for(const number of prayers) {
     }
     console.log(key, value);
 }*/
+
+//::::::::::::::::::3. Using a forEach Loop:::::::::::::::::
+
+//:::Recap forEach():::
+const myArray = ['Karim', 'Rahim', 'Jewel'];
+
+myArray.forEach(function printNames(element, index, array) {
+    console.log(element, index, array);
+});
+
+const myArray2 = ['jQuery', 'Bootstrap', 'React', 'Redux'];
+
+myArray2.forEach((name) => console.log(name));
+
+
+const courses = new Map();
+
+courses.set('course-1', 'ES6');
+courses.set('course-2', 'jQuery');
+courses.set('course-3', 'Bootstrap');
+
+console.log(courses);
+
+courses.forEach((value, key) => console.log(key, value));
+
+//Another example
+const developers = new Map();
+
+const setOfTopics = new Set(['JavaScript', 'OOP JavaScript', 'ES6', 'jQuery', 'Bootstrap', 'React']);
+developers.set('Front-end', setOfTopics);
+developers.set('Back-end', ['mySQL', 'nodeJS', 'express']);
+
+console.log(developers);
+
+developers.forEach((value, index) => console.log(index, value));
+
