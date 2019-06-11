@@ -89,4 +89,10 @@ fetch('https://jsonplaceholder.typicode.com/users')
     })
     .catch((err) => console.log(err))
 
-    
+
+//:::another task:::
+
+let a = 5, b = 7, sum;
+sum = a + b;
+// console.log(sum);
+document.getElementById('sum').textContent = sum;
